@@ -1,0 +1,460 @@
+{
+  "version": "ARF calculation experiments 1.0",
+  "date": "2026-09-08",
+  "engine": "ARF Local Geometry v3.0",
+  "scope": "Computational sensitivity tests using synthetic coordinates and chosen signals. No photographs, no participants and no landmark-model inference. Not a population or accuracy study.",
+  "assumptions": {
+    "photo": {
+      "width": 900,
+      "height": 900,
+      "brightness": 54,
+      "contrast": 72,
+      "sharpness": 78
+    },
+    "projection": {
+      "nearWidthCm": 3.6,
+      "farWidthCm": 14,
+      "depthCm": 6,
+      "focalLengthMm": 50
+    }
+  },
+  "distance": [
+    {
+      "distanceCm": 30,
+      "focalLengthMm": 50,
+      "projectedRatio": 0.3086,
+      "relativeEnlargement": 20
+    },
+    {
+      "distanceCm": 50,
+      "focalLengthMm": 50,
+      "projectedRatio": 0.288,
+      "relativeEnlargement": 12
+    },
+    {
+      "distanceCm": 100,
+      "focalLengthMm": 50,
+      "projectedRatio": 0.2726,
+      "relativeEnlargement": 6
+    },
+    {
+      "distanceCm": 150,
+      "focalLengthMm": 50,
+      "projectedRatio": 0.2674,
+      "relativeEnlargement": 4
+    },
+    {
+      "distanceCm": 200,
+      "focalLengthMm": 50,
+      "projectedRatio": 0.2649,
+      "relativeEnlargement": 3
+    }
+  ],
+  "lighting": [
+    {
+      "brightness": 15,
+      "symmetry": 100,
+      "geometry": 86,
+      "presentation": 68,
+      "overall": 83
+    },
+    {
+      "brightness": 25,
+      "symmetry": 100,
+      "geometry": 86,
+      "presentation": 72,
+      "overall": 84
+    },
+    {
+      "brightness": 35,
+      "symmetry": 100,
+      "geometry": 86,
+      "presentation": 77,
+      "overall": 85
+    },
+    {
+      "brightness": 45,
+      "symmetry": 100,
+      "geometry": 86,
+      "presentation": 81,
+      "overall": 86
+    },
+    {
+      "brightness": 55,
+      "symmetry": 100,
+      "geometry": 86,
+      "presentation": 85,
+      "overall": 87
+    },
+    {
+      "brightness": 65,
+      "symmetry": 100,
+      "geometry": 86,
+      "presentation": 80,
+      "overall": 86
+    },
+    {
+      "brightness": 75,
+      "symmetry": 100,
+      "geometry": 86,
+      "presentation": 76,
+      "overall": 85
+    },
+    {
+      "brightness": 85,
+      "symmetry": 100,
+      "geometry": 86,
+      "presentation": 71,
+      "overall": 84
+    },
+    {
+      "brightness": 95,
+      "symmetry": 100,
+      "geometry": 86,
+      "presentation": 67,
+      "overall": 83
+    }
+  ],
+  "repeatability": [
+    {
+      "roll": -12,
+      "jawShiftPixels": 0,
+      "symmetry": 100,
+      "geometry": 83,
+      "presentation": 75,
+      "overall": 82
+    },
+    {
+      "roll": -12,
+      "jawShiftPixels": 3.6,
+      "symmetry": 100,
+      "geometry": 83,
+      "presentation": 75,
+      "overall": 82
+    },
+    {
+      "roll": -12,
+      "jawShiftPixels": 7.2,
+      "symmetry": 100,
+      "geometry": 83,
+      "presentation": 75,
+      "overall": 82
+    },
+    {
+      "roll": -12,
+      "jawShiftPixels": 10.8,
+      "symmetry": 99,
+      "geometry": 82,
+      "presentation": 75,
+      "overall": 81
+    },
+    {
+      "roll": -12,
+      "jawShiftPixels": 14.4,
+      "symmetry": 99,
+      "geometry": 82,
+      "presentation": 75,
+      "overall": 81
+    },
+    {
+      "roll": -12,
+      "jawShiftPixels": 18,
+      "symmetry": 99,
+      "geometry": 81,
+      "presentation": 75,
+      "overall": 81
+    },
+    {
+      "roll": -6,
+      "jawShiftPixels": 0,
+      "symmetry": 100,
+      "geometry": 85,
+      "presentation": 80,
+      "overall": 85
+    },
+    {
+      "roll": -6,
+      "jawShiftPixels": 3.6,
+      "symmetry": 100,
+      "geometry": 84,
+      "presentation": 80,
+      "overall": 84
+    },
+    {
+      "roll": -6,
+      "jawShiftPixels": 7.2,
+      "symmetry": 100,
+      "geometry": 84,
+      "presentation": 80,
+      "overall": 84
+    },
+    {
+      "roll": -6,
+      "jawShiftPixels": 10.8,
+      "symmetry": 99,
+      "geometry": 83,
+      "presentation": 80,
+      "overall": 83
+    },
+    {
+      "roll": -6,
+      "jawShiftPixels": 14.4,
+      "symmetry": 99,
+      "geometry": 83,
+      "presentation": 80,
+      "overall": 83
+    },
+    {
+      "roll": -6,
+      "jawShiftPixels": 18,
+      "symmetry": 99,
+      "geometry": 83,
+      "presentation": 80,
+      "overall": 83
+    },
+    {
+      "roll": 0,
+      "jawShiftPixels": 0,
+      "symmetry": 100,
+      "geometry": 86,
+      "presentation": 85,
+      "overall": 87
+    },
+    {
+      "roll": 0,
+      "jawShiftPixels": 3.6,
+      "symmetry": 100,
+      "geometry": 86,
+      "presentation": 85,
+      "overall": 87
+    },
+    {
+      "roll": 0,
+      "jawShiftPixels": 7.2,
+      "symmetry": 100,
+      "geometry": 86,
+      "presentation": 85,
+      "overall": 86
+    },
+    {
+      "roll": 0,
+      "jawShiftPixels": 10.8,
+      "symmetry": 99,
+      "geometry": 85,
+      "presentation": 85,
+      "overall": 86
+    },
+    {
+      "roll": 0,
+      "jawShiftPixels": 14.4,
+      "symmetry": 99,
+      "geometry": 85,
+      "presentation": 85,
+      "overall": 85
+    },
+    {
+      "roll": 0,
+      "jawShiftPixels": 18,
+      "symmetry": 99,
+      "geometry": 84,
+      "presentation": 85,
+      "overall": 85
+    },
+    {
+      "roll": 6,
+      "jawShiftPixels": 0,
+      "symmetry": 100,
+      "geometry": 85,
+      "presentation": 80,
+      "overall": 85
+    },
+    {
+      "roll": 6,
+      "jawShiftPixels": 3.6,
+      "symmetry": 100,
+      "geometry": 84,
+      "presentation": 80,
+      "overall": 84
+    },
+    {
+      "roll": 6,
+      "jawShiftPixels": 7.2,
+      "symmetry": 100,
+      "geometry": 84,
+      "presentation": 80,
+      "overall": 84
+    },
+    {
+      "roll": 6,
+      "jawShiftPixels": 10.8,
+      "symmetry": 99,
+      "geometry": 83,
+      "presentation": 80,
+      "overall": 83
+    },
+    {
+      "roll": 6,
+      "jawShiftPixels": 14.4,
+      "symmetry": 99,
+      "geometry": 83,
+      "presentation": 80,
+      "overall": 83
+    },
+    {
+      "roll": 6,
+      "jawShiftPixels": 18,
+      "symmetry": 99,
+      "geometry": 83,
+      "presentation": 80,
+      "overall": 83
+    },
+    {
+      "roll": 12,
+      "jawShiftPixels": 0,
+      "symmetry": 100,
+      "geometry": 83,
+      "presentation": 75,
+      "overall": 82
+    },
+    {
+      "roll": 12,
+      "jawShiftPixels": 3.6,
+      "symmetry": 100,
+      "geometry": 83,
+      "presentation": 75,
+      "overall": 82
+    },
+    {
+      "roll": 12,
+      "jawShiftPixels": 7.2,
+      "symmetry": 100,
+      "geometry": 83,
+      "presentation": 75,
+      "overall": 82
+    },
+    {
+      "roll": 12,
+      "jawShiftPixels": 10.8,
+      "symmetry": 99,
+      "geometry": 82,
+      "presentation": 75,
+      "overall": 81
+    },
+    {
+      "roll": 12,
+      "jawShiftPixels": 14.4,
+      "symmetry": 99,
+      "geometry": 82,
+      "presentation": 75,
+      "overall": 81
+    },
+    {
+      "roll": 12,
+      "jawShiftPixels": 18,
+      "symmetry": 99,
+      "geometry": 81,
+      "presentation": 75,
+      "overall": 81
+    }
+  ],
+  "shape": [
+    {
+      "jawAngle": 132,
+      "primary": "Square",
+      "primaryShare": 56,
+      "alternate": "Triangle",
+      "alternateShare": 26
+    },
+    {
+      "jawAngle": 136,
+      "primary": "Square",
+      "primaryShare": 51,
+      "alternate": "Triangle",
+      "alternateShare": 25
+    },
+    {
+      "jawAngle": 140,
+      "primary": "Square",
+      "primaryShare": 45,
+      "alternate": "Triangle",
+      "alternateShare": 24
+    },
+    {
+      "jawAngle": 144,
+      "primary": "Square",
+      "primaryShare": 38,
+      "alternate": "Round",
+      "alternateShare": 26
+    },
+    {
+      "jawAngle": 148,
+      "primary": "Round",
+      "primaryShare": 35,
+      "alternate": "Square",
+      "alternateShare": 30
+    },
+    {
+      "jawAngle": 152,
+      "primary": "Round",
+      "primaryShare": 44,
+      "alternate": "Square",
+      "alternateShare": 24
+    },
+    {
+      "jawAngle": 156,
+      "primary": "Round",
+      "primaryShare": 53,
+      "alternate": "Square",
+      "alternateShare": 17
+    },
+    {
+      "jawAngle": 160,
+      "primary": "Round",
+      "primaryShare": 62,
+      "alternate": "Square",
+      "alternateShare": 12
+    }
+  ],
+  "golden": [
+    {
+      "mouthScale": 0.7,
+      "mouthNose": 1.26,
+      "mouthNoseScore": 76,
+      "cheekMouth": 4.444,
+      "cheekMouthScore": 4,
+      "goldenScore": 62
+    },
+    {
+      "mouthScale": 0.85,
+      "mouthNose": 1.53,
+      "mouthNoseScore": 95,
+      "cheekMouth": 3.66,
+      "cheekMouthScore": 22,
+      "goldenScore": 71
+    },
+    {
+      "mouthScale": 1,
+      "mouthNose": 1.8,
+      "mouthNoseScore": 90,
+      "cheekMouth": 3.111,
+      "cheekMouthScore": 38,
+      "goldenScore": 74
+    },
+    {
+      "mouthScale": 1.15,
+      "mouthNose": 2.07,
+      "mouthNoseScore": 77,
+      "cheekMouth": 2.705,
+      "cheekMouthScore": 51,
+      "goldenScore": 74
+    },
+    {
+      "mouthScale": 1.3,
+      "mouthNose": 2.34,
+      "mouthNoseScore": 65,
+      "cheekMouth": 2.393,
+      "cheekMouthScore": 63,
+      "goldenScore": 74
+    }
+  ]
+}
