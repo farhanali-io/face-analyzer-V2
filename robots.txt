@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /face$
-Disallow: /api/
-Disallow: /health$
 
-Sitemap: https://airateface.com/sitemap.xml
+Sitemap: https://scan.toolgenie.online/sitemap.xml

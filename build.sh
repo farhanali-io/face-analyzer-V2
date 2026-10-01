@@ -14,7 +14,7 @@ done
 
 # Copy root assets
 echo "Copying root assets..."
-for ext in ico svg txt webmanifest json; do
+for ext in ico svg txt webmanifest json xml; do
   for f in *.$ext; do
     [ -f "$f" ] && cp "$f" dist/ || true
   done
