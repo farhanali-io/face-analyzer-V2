@@ -1,0 +1,16 @@
+AI Rate Face — Third-party notices
+
+HEIC/HEIF browser conversion
+
+heic-to 1.5.2
+Copyright Hopper Gee and contributors
+License: GNU Lesser General Public License v3.0 (LGPL-3.0)
+Source: https://github.com/hoppergee/heic-to/tree/v1.5.2
+
+heic-to includes libheif 1.22.2.
+Copyright Struktur AG and contributors
+License: GNU Lesser General Public License v3.0 (LGPL-3.0)
+Source: https://github.com/strukturag/libheif/tree/v1.22.2
+
+These components are loaded in the browser only when a user selects a HEIC or
+HEIF file. AI Rate Face does not send the source image to a conversion service.
