@@ -1,4 +1,129 @@
+# robots.txt for scan.toolgenie.online
+# All search engines and AI crawlers explicitly allowed.
+# Sensitive internal files blocked.
+
+# ============================
+# SEARCH ENGINE BOTS
+# ============================
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# ============================
+# AI CRAWLER BOTS (Allow)
+# ============================
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Google AI (Gemini)
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# ByteDance / TikTok AI
+User-agent: Bytespider
+Allow: /
+
+# Common Crawl (feeds many AI models)
+User-agent: CCBot
+Allow: /
+
+# Diffbot
+User-agent: Diffbot
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Microsoft AI
+User-agent: Bingbot
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# ============================
+# ALL OTHER BOTS
+# ============================
+
 User-agent: *
 Allow: /
+
+# ============================
+# DISALLOW SENSITIVE FILES
+# ============================
+
+Disallow: /research/*.mjs
+Disallow: /research/*.csv
+Disallow: /research/*.json
+Disallow: /package.json
+Disallow: /metadata.json
+Disallow: /wrangler.toml
+Disallow: /build.sh
+Disallow: /.env
+Disallow: /.git/
+
+# ============================
+# SITEMAP
+# ============================
 
 Sitemap: https://scan.toolgenie.online/sitemap.xml
