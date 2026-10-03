@@ -1,7 +1,0 @@
-{
-  "name": "AI Rate Face",
-  "description": "Check your face score, symmetry, face shape and facial proportions with our free AI face rater. No signup. Your photo stays in your browser.",
-  "capabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
-}
