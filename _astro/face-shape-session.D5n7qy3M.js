@@ -1,9 +1,20 @@
-const SESSION_KEY = "arf_face_shape_session";
+const SESSION_KEY = "arf:face-shape-session";
+export const SESSION_TTL_MS = 30 * 60 * 1000;
 
 export function getSession() {
   try {
     const raw = sessionStorage.getItem(SESSION_KEY) || localStorage.getItem(SESSION_KEY);
-    return raw ? JSON.parse(raw) : null;
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    const createdAt = parsed.createdAt || parsed.timestamp || Date.now();
+    if (Date.now() - createdAt > SESSION_TTL_MS) {
+      clearSession();
+      return null;
+    }
+    return {
+      ...parsed,
+      createdAt
+    };
   } catch {
     return null;
   }
@@ -11,26 +22,35 @@ export function getSession() {
 
 export function saveSession(session) {
   try {
-    sessionStorage.setItem(SESSION_KEY, JSON.stringify(session));
-    localStorage.setItem(SESSION_KEY, JSON.stringify(session));
-    window.dispatchEvent(new CustomEvent("arf_session_updated", { detail: session }));
-  } catch {}
+    const payload = {
+      ...session,
+      createdAt: session?.createdAt || Date.now()
+    };
+    const serialized = JSON.stringify(payload);
+    sessionStorage.setItem(SESSION_KEY, serialized);
+    localStorage.setItem(SESSION_KEY, serialized);
+    window.dispatchEvent(new CustomEvent("arf:shape-result", { detail: payload }));
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 export function clearSession() {
   try {
     sessionStorage.removeItem(SESSION_KEY);
     localStorage.removeItem(SESSION_KEY);
-    window.dispatchEvent(new CustomEvent("arf_session_updated", { detail: null }));
+    window.dispatchEvent(new CustomEvent("arf:shape-result", { detail: null }));
   } catch {}
 }
 
-export function buildSessionPayload(ranking, ratios, source = "photo") {
+export function buildSessionPayload(ranking, features, source = "photo") {
   return {
     ranking,
-    ratios,
+    features,
+    ratios: features,
     source,
-    timestamp: Date.now()
+    createdAt: Date.now()
   };
 }
 
@@ -46,19 +66,16 @@ export function extractSessionRatios(report) {
 
 export function getSourceLabel(source) {
   if (source === "camera" || source === "live") return "your live camera scan";
+  if (source === "manual") return "your manual measurements";
   if (source === "example") return "an example portrait";
   return "your uploaded photo";
-}
-
-export function onSessionChange(callback) {
-  window.addEventListener("arf_session_updated", (e) => callback(e.detail));
 }
 
 export {
   getSession as a,
   clearSession as n,
   getSourceLabel as s,
-  onSessionChange as t,
+  SESSION_TTL_MS as t,
   saveSession as o,
   buildSessionPayload as r,
   extractSessionRatios as i

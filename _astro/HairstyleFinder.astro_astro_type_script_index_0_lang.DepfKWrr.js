@@ -1,4 +1,4 @@
-import{a as e,n as t,s as n,t as r}from"./face-shape-session.D5n7qy3M.js";import{r as i}from"./photo-input.B2aPvohU.js";import{a,r as o,t as s}from"./hairstyle-matcher.D4lmipD-.js";import{t as c}from"./style-navigation.l4Qj8_dI.js";var l=i;function u(e){let{style:t}=e,n=c.some(e=>e===t.id);return`<article class="hair-card" data-hair-card="${t.id}">
+import{a as e,n as t,s as n,t as r}from"./face-shape-session.D5n7qy3M.js?v=2.0.1";import{r as i}from"./photo-input.B2aPvohU.js?v=2.0.1";import{a,r as o,t as s}from"./hairstyle-matcher.D4lmipD-.js?v=2.0.1";import{t as c}from"./style-navigation.l4Qj8_dI.js?v=2.0.1";var l=i;function u(e){let{style:t}=e,n=c.some(e=>e===t.id);return`<article class="hair-card" data-hair-card="${t.id}">
     <img src="${a(t)}" width="480" height="360" loading="lazy" alt="${l(t.name)} silhouette illustration" class="aspect-[4/3] w-full object-cover" />
     <div class="p-5"><h3 class="text-xl font-semibold">${l(t.name)}</h3>
     <p class="mt-2 text-sm font-semibold text-sage-dark">${e.fit}</p>

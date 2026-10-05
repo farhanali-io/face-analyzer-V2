@@ -1,20 +1,20 @@
-export * from "../research/live-shape-core.mjs";
+export * from "../research/live-shape-core.mjs?v=2.0.1";
 import {
   summarizeScan,
-  landmarkFrameGate,
+  LIVE_MAX_DURATION_MS,
   scanExport,
+  FEATURE_KEYS,
   aggregateFeatures,
-  validLiveFeatures
-} from "../research/live-shape-core.mjs";
+  validLiveFeatures,
+  quantile
+} from "../research/live-shape-core.mjs?v=2.0.1";
 
 export {
+  aggregateFeatures as a,
   summarizeScan as c,
-  summarizeScan as r,
-  landmarkFrameGate as n,
-  landmarkFrameGate as o,
+  validLiveFeatures as l,
+  LIVE_MAX_DURATION_MS as n,
+  quantile as o,
   scanExport as s,
-  scanExport as a,
-  scanExport as t,
-  aggregateFeatures as l,
-  validLiveFeatures as v
+  FEATURE_KEYS as t
 };

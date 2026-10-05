@@ -238,14 +238,19 @@ export function round(val, digits = 1) {
   return Math.round(val * factor) / factor;
 }
 
+export function preloadModule(fn) {
+  return Promise.resolve().then(fn);
+}
+
 export {
   isHeic as a,
   prepareImage as s,
   prepareImage as o,
   revokeImageOrRound as c,
   getImageDimensionsOrPath as i,
-  drawPoint as l,
+  preloadModule as l,
   copyImageToCanvas as n,
   escapeHtml as r,
   fitCanvasOrDrawLine as t
 };
+

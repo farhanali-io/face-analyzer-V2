@@ -1,4 +1,4 @@
-export * from "../research/geometry-core.mjs";
+export * from "../research/geometry-core.mjs?v=2.0.1";
 import {
   analyzeFaceGeometry,
   OVERLAY_LANDMARKS,
@@ -7,7 +7,7 @@ import {
   SHAPE_PROFILES,
   SHAPE_HAIRSTYLES,
   extractShapeFeatures
-} from "../research/geometry-core.mjs";
+} from "../research/geometry-core.mjs?v=2.0.1";
 
 export {
   analyzeFaceGeometry as i,

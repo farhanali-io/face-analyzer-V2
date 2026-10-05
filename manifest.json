@@ -1,0 +1,21 @@
+{
+  "name": "AI Face Analyzer",
+  "short_name": "Face Analyzer",
+  "version": "2.0.1",
+  "start_url": "/?v=2.0.1",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
