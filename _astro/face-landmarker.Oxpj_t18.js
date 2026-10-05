@@ -1,6 +1,14 @@
 let landmarkerInstance = null;
 let landmarkerPromise = null;
 
+export function safeGetDimensions(source) {
+  if (!source) return { width: 640, height: 480 };
+  if (source.dimensions) return { width: source.dimensions.width || 640, height: source.dimensions.height || 480 };
+  if (source.naturalWidth && source.naturalHeight) return { width: source.naturalWidth, height: source.naturalHeight };
+  if (source.width && source.height) return { width: source.width, height: source.height };
+  return { width: 640, height: 480 };
+}
+
 async function initLandmarker() {
   if (landmarkerInstance) return landmarkerInstance;
   if (landmarkerPromise) return landmarkerPromise;
@@ -122,11 +130,12 @@ export async function prepareFaceLandmarker() {
 }
 
 export async function detectFaceLandmarks(canvas) {
+  const dims = safeGetDimensions(canvas);
   try {
     const lm = await initLandmarker();
-    if (lm) {
+    if (lm && canvas) {
       const results = lm.detect(canvas);
-      if (results.faceLandmarks && results.faceLandmarks.length > 0) {
+      if (results && results.faceLandmarks && results.faceLandmarks.length > 0) {
         return { faces: results.faceLandmarks };
       }
     }
@@ -135,7 +144,7 @@ export async function detectFaceLandmarks(canvas) {
   }
 
   // Fallback to geometric detector
-  const faces = generateFallbackLandmarks(canvas.width || 640, canvas.height || 480);
+  const faces = generateFallbackLandmarks(dims.width, dims.height);
   return { faces };
 }
 

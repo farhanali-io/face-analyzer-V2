@@ -1,4 +1,15 @@
 {
-  "name": "face-analyzer-v2",
-  "private": true
+  "name": "AI Face Analyzer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "bash build.sh"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "short_name": "Face Analyzer"
 }

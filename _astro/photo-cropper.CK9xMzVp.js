@@ -25,8 +25,8 @@ export class PhotoCropper {
         return;
       }
       this.source = source;
-      this.sourceWidth = sourceWidth;
-      this.sourceHeight = sourceHeight;
+      this.sourceWidth = sourceWidth || source?.naturalWidth || source?.width || 640;
+      this.sourceHeight = sourceHeight || source?.naturalHeight || source?.height || 480;
       this.zoom = initialState?.zoom || 1;
       this.offsetX = initialState?.offsetX || 0;
       this.offsetY = initialState?.offsetY || 0;

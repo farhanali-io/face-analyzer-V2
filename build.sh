@@ -20,6 +20,17 @@ for ext in ico svg txt webmanifest json xml; do
   done
 done
 
+# Copy special Cloudflare configuration files
+[ -f "_redirects" ] && cp "_redirects" dist/_redirects || true
+[ -f "_headers" ] && cp "_headers" dist/_headers || true
+
+# Copy public folder
+if [ -d "public" ]; then
+  echo "Copying public..."
+  cp -r public dist/
+  rm -f dist/public/_redirects
+fi
+
 # Copy folders
 echo "Copying folders..."
 for d in _astro assets face-shape hairstyles research; do

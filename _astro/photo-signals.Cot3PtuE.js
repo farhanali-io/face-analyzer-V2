@@ -1,8 +1,17 @@
+export function safeGetDimensions(source) {
+  if (!source) return { width: 640, height: 480 };
+  if (source.dimensions) return { width: source.dimensions.width || 640, height: source.dimensions.height || 480 };
+  if (source.naturalWidth && source.naturalHeight) return { width: source.naturalWidth, height: source.naturalHeight };
+  if (source.width && source.height) return { width: source.width, height: source.height };
+  return { width: 640, height: 480 };
+}
+
 export function extractPhotoSignals(canvas) {
-  const w = canvas.width || 640;
-  const h = canvas.height || 480;
+  const dims = safeGetDimensions(canvas);
+  const w = dims.width;
+  const h = dims.height;
   const sampleW = 160;
-  const sampleH = Math.max(80, Math.round(160 * h / w));
+  const sampleH = Math.max(80, Math.round(160 * h / (w || 1)));
   
   const offscreen = document.createElement('canvas');
   offscreen.width = sampleW;
@@ -11,7 +20,11 @@ export function extractPhotoSignals(canvas) {
   if (!ctx) {
     return { brightness: 55, contrast: 45, sharpness: 80, width: w, height: h };
   }
-  ctx.drawImage(canvas, 0, 0, sampleW, sampleH);
+  try {
+    ctx.drawImage(canvas, 0, 0, sampleW, sampleH);
+  } catch (_) {
+    return { brightness: 55, contrast: 45, sharpness: 80, width: w, height: h };
+  }
   const data = ctx.getImageData(0, 0, sampleW, sampleH).data;
   const luma = new Float32Array(sampleW * sampleH);
   let totalLuma = 0;
