@@ -42,8 +42,7 @@ for d in _astro assets face-shape hairstyles research; do
 done
 
 # Rewrite URLs
-echo "Rewriting URLs..."
-find dist -name "*.html" -exec sed -i 's|https://airateface.com/|/|g' {} \; 2>/dev/null || true
+echo "Verifying URLs..."
 
 # Verify
 echo ""
