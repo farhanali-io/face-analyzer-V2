@@ -1,32 +1,21 @@
-# 1. www and http to https non-www for scan subdomain - MUST be first
-https://www.scan.toolgenie.online/* https://scan.toolgenie.online/:splat 301!
-http://www.scan.toolgenie.online/* https://scan.toolgenie.online/:splat 301!
-http://scan.toolgenie.online/* https://scan.toolgenie.online/:splat 301!
-
-# 2. .html to clean URL - 301! forced (must be before catch-all)
-# Root index
-/index.html / 301!
-# Specific pages - list all
-/sources.html /sources/ 301!
-/face-shape-detector.html /face-shape-detector/ 301!
-/facial-thirds-calculator.html /facial-thirds-calculator/ 301!
-/face-symmetry-test.html /face-symmetry-test/ 301!
-/golden-ratio-face-calculator.html /golden-ratio-face-calculator/ 301!
-/eye-shape-detector.html /eye-shape-detector/ 301!
-/hairstyles.html /hairstyles/ 301!
-/face-shapes.html /face-shapes/ 301!
-/privacy-policy.html /privacy-policy/ 301!
-/terms-of-use.html /terms-of-use/ 301!
-/contact-us.html /contact-us/ 301!
-/editorial-policy.html /editorial-policy/ 301!
-/data-processing.html /data-processing/ 301!
-/changelog.html /changelog/ 301!
-/about.html /about/ 301!
-# Research folder
-/research/*.html /research/:splat/ 301!
-# Generic catch-all for any remaining .html
-/*.html /:splat/ 301!
-
-# 3. Specific cleanups
-/tools/ / 301!
-/tools / 301!
+# .html to clean URL - relative only, no https, no !
+/index.html / 301
+/sources.html /sources/ 301
+/face-shape-detector.html /face-shape-detector/ 301
+/facial-thirds-calculator.html /facial-thirds-calculator/ 301
+/face-symmetry-test.html /face-symmetry-test/ 301
+/golden-ratio-face-calculator.html /golden-ratio-face-calculator/ 301
+/eye-shape-detector.html /eye-shape-detector/ 301
+/hairstyles.html /hairstyles/ 301
+/face-shapes.html /face-shapes/ 301
+/privacy-policy.html /privacy-policy/ 301
+/terms-of-use.html /terms-of-use/ 301
+/contact-us.html /contact-us/ 301
+/editorial-policy.html /editorial-policy/ 301
+/data-processing.html /data-processing/ 301
+/changelog.html /changelog/ 301
+/about.html /about/ 301
+/research/*.html /research/:splat/ 301
+/*.html /:splat/ 301
+/tools/ / 301
+/tools / 301
