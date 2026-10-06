@@ -13,3 +13,6 @@
   },
   "short_name": "Face Analyzer"
 }
+"scripts": {
+  "build": "bash build.sh"
+}
