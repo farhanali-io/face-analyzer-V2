@@ -1,4 +1,4 @@
-AI Rate Face — Third-party notices
+AI Face Analyzer — Third-party notices
 
 HEIC/HEIF browser conversion
 
@@ -13,4 +13,4 @@ License: GNU Lesser General Public License v3.0 (LGPL-3.0)
 Source: https://github.com/strukturag/libheif/tree/v1.22.2
 
 These components are loaded in the browser only when a user selects a HEIC or
-HEIF file. AI Rate Face does not send the source image to a conversion service.
+HEIF file. AI Face Analyzer does not send the source image to a conversion service.
