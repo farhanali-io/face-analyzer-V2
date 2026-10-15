@@ -30,6 +30,18 @@ fi
 [ -f "_headers" ] && cp _headers dist/_headers || true
 [ -f "public/_headers" ] && cp public/_headers dist/_headers || true
 
+# 3b. Copy OG images and public images - THIS WAS MISSING
+if [ -d "public" ]; then
+  for f in public/*.jpg public/*.jpeg public/*.png public/*.webp public/*.avif; do
+    [ -f "$f" ] && cp "$f" dist/ && echo "✓ $(basename $f) from public/" || true
+  done
+  # also copy to dist/assets for compatibility
+  mkdir -p dist/assets
+  for f in public/*.jpg public/*.jpeg public/*.png public/*.webp public/*.avif; do
+    [ -f "$f" ] && cp "$f" dist/assets/ && echo "✓ assets/$(basename $f)" || true
+  done
+fi
+
 # 4. Copy _astro and assets folders
 [ -d "_astro" ] && cp -r _astro dist/ && echo "✓ _astro"
 [ -d "assets" ] && cp -r assets dist/ && echo "✓ assets"
@@ -66,6 +78,8 @@ echo ""
 echo "Total: $(find dist -type f | wc -l) files"
 echo "Research check:"
 ls -R dist/research | head -30
+echo ""
+ls -lh dist/*.jpg dist/assets/*.jpg 2>&1 | head -20
 echo ""
 cat dist/_redirects
 echo ""
