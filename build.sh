@@ -15,36 +15,58 @@ for f in *.html; do
   fi
 done
 
-# 2. Copy assets
-for ext in ico svg txt webmanifest json xml; do
+# 2. Copy root static assets
+for ext in ico svg txt webmanifest json xml jpg jpeg png webp avif; do
   for f in *.$ext; do
     [ -f "$f" ] && cp "$f" dist/ || true
   done
 done
 
-# 3. Copy _redirects relative-only
+# 3. Copy _redirects and _headers
 if [ -f "public/_redirects" ]; then
   cp public/_redirects dist/_redirects
-  echo "✓ _redirects copied"
+  echo "✓ _redirects copied from public"
+elif [ -f "_redirects" ]; then
+  cp _redirects dist/_redirects
+  echo "✓ _redirects copied from root"
 fi
 [ -f "_headers" ] && cp _headers dist/_headers || true
 [ -f "public/_headers" ] && cp public/_headers dist/_headers || true
 
-# 3b. Copy OG images and public images - THIS WAS MISSING
+# 4. Copy public/ folder if exists
 if [ -d "public" ]; then
-  for f in public/*.jpg public/*.jpeg public/*.png public/*.webp public/*.avif; do
-    [ -f "$f" ] && cp "$f" dist/ && echo "✓ $(basename $f) from public/" || true
-  done
-  # also copy to dist/assets for compatibility
+  cp -r public/. dist/ 2>/dev/null || true
   mkdir -p dist/assets
   for f in public/*.jpg public/*.jpeg public/*.png public/*.webp public/*.avif; do
-    [ -f "$f" ] && cp "$f" dist/assets/ && echo "✓ assets/$(basename $f)" || true
+    [ -f "$f" ] && cp "$f" dist/assets/ && echo "✓ assets/$(basename "$f") from public" || true
   done
 fi
 
-# 4. Copy _astro and assets folders
-[ -d "_astro" ] && cp -r _astro dist/ && echo "✓ _astro"
-[ -d "assets" ] && cp -r assets dist/ && echo "✓ assets"
+# 5. Copy assets and _astro folders safely with /.
+if [ -d "assets" ]; then
+  mkdir -p dist/assets
+  cp -r assets/. dist/assets/
+  echo "✓ assets copied to dist/assets"
+  # Also copy top-level images to root dist for root URLs (/og-image.jpg)
+  for f in assets/*.jpg assets/*.jpeg assets/*.png assets/*.webp assets/*.avif; do
+    [ -f "$f" ] && cp "$f" dist/ || true
+  done
+fi
+[ -d "_astro" ] && mkdir -p dist/_astro && cp -r _astro/. dist/_astro/ && echo "✓ _astro"
+
+# Ensure og-image.jpg and face-analysis-banner.jpg are present in both dist/ and dist/assets/
+for img in og-image.jpg face-analysis-banner.jpg; do
+  if [ -f "assets/$img" ]; then
+    cp "assets/$img" "dist/assets/$img"
+    cp "assets/$img" "dist/$img"
+  elif [ -f "public/$img" ]; then
+    cp "public/$img" "dist/assets/$img"
+    cp "public/$img" "dist/$img"
+  elif [ -f "$img" ]; then
+    cp "$img" "dist/assets/$img"
+    cp "$img" "dist/$img"
+  fi
+done
 
 # 5. Research - FIXED with deep mirrors
 echo "Copying research with mirrors..."
