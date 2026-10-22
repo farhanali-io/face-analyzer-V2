@@ -103,6 +103,6 @@ ls -R dist/research | head -30
 echo ""
 ls -lh dist/*.jpg dist/assets/*.jpg 2>&1 | head -20
 echo ""
-cat dist/_redirects
+[ -f "dist/_redirects" ] && cat dist/_redirects || true
 echo ""
 echo "=== Build Complete ==="
